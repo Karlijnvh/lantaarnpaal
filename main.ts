@@ -1,8 +1,10 @@
+let timerEindtijd = 0
 let toestand = 1
-let timerEindtijd = input.runningTime() + 5000
 basic.forever(function () {
     if (toestand == 1) {
         if (input.lightLevel() < 100) {
+            timerEindtijd = input.runningTime() + 5000
+            basic.pause(5000)
             if (input.runningTime() >= timerEindtijd) {
                 basic.showLeds(`
                     # # # # #
@@ -11,7 +13,6 @@ basic.forever(function () {
                     # # # # #
                     # # # # #
                     `)
-                timerEindtijd = input.runningTime() + 5000
                 toestand = 2
             }
         }
