@@ -3,8 +3,8 @@ let toestand = 1
 basic.forever(function () {
     if (toestand == 1) {
         if (input.lightLevel() < 100) {
-            timerEindtijd = input.runningTime() + 5000
             toestand = 2
+            timerEindtijd = input.runningTime() + 5000
         }
     }
     if (toestand == 2) {
